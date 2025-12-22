@@ -1,13 +1,13 @@
    <thead>
-        <?php 
-        $items = ['Id_barang','Kategori','gambar','harga_beli','harga_jual','stok'];
-        foreach($items as $item){
-            echo "
-                <tr>$item</tr>
-            ";
-        }
-    ?>
-    </thead>
+    <td>
+        <tr>Id_Barang</tr>
+        <tr>Kategori</tr>
+        <tr>Harga Beli</tr>
+        <tr>Harga Jual</tr>
+        <tr>Stok</tr>
+    </td>
+
+</thead>
     <tbody>
         <?php
             $data = $cluster->getallData("data_barang");

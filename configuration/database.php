@@ -24,7 +24,7 @@ class DatabaseConn{
     public function getallData($table){
         $net = $this->connect();
         $safeTable = $net->real_escape_string($table);
-        $query = "SELECT * FROM {$safeTable}";
+        $query = "SELECT * FROM {$safeTable} LIMIT 10";
         $results = $net->query($query);
 
         return $results;
@@ -34,7 +34,7 @@ class DatabaseConn{
         $net = $this->connect();
         $safeTable = $net->real_escape_string($table);
         $safeColumn = $net->real_escape_string($column);
-        $query = $net->prepare("SELECT * FROM {$safeTable} WHERE {$safeColumn} LIKE ?");
+        $query = $net->prepare("SELECT * FROM {$safeTable} WHERE {$safeColumn} LIKE ? LIMIT 10");
 
         $searchTerm = "%" . $name . "%";
         $query->bind_param("s",$searchTerm);

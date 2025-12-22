@@ -1,0 +1,15 @@
+{
+    "name": "radji/pertemuan14",
+    "autoload": {
+        "psr-4": {
+            "Radji\\Pertemuan14\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Radjikin Septiawan",
+            "email": "radjikins21@gmail.com"
+        }
+    ],
+    "require": {}
+}

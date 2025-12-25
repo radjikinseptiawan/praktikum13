@@ -25,8 +25,7 @@
 <body>
     <form action="" class="search-form" method="get">
         <label for="search">Cari Data</label>
-        <input class="input-group" id="search" name="search" type="text" value="<?= isset($_GET['search']) ? $_GET['search
-        '] : '' ?>">
+        <input class="input-group" id="search" name="search" type="text" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>">
         <input  class="input-group" type="submit" value="Cari">
     </form>
 
@@ -49,11 +48,11 @@
         <?php
             if($data-> num_rows == $per_page):
         ?>
-            <a href="?page=<?= $page + 1 ?>>">Next</a>
+            <a href="?page=<?= $page + 1 ?>">Next</a>
         <?php endif; ?>
         <?php
             if($page > 1):?>
-            <a href="?page=<?= $page - 1 ?>>">Previous</a>
+            <a href="?page=<?= $page - 1 ?>">Previous</a>
         <?php endif;?>
 </body>
 </html>

@@ -46,7 +46,7 @@ class DatabaseConn{
         $net = $this->connect();
         $safeTable = $net->real_escape_string($table);
         $safeColumn = $net->real_escape_string($column);
-        $query = $net->prepare("SELECT * FROM {$safeTable} WHERE {$safeColumn} LIKE ? LIMIT 10");
+        $query = $net->prepare("SELECT * FROM {$safeTable} WHERE {$safeColumn} LIKE ? LIMIT 5");
 
         $searchTerm = "%" . $name . "%";
         $query->bind_param("s",$searchTerm);

@@ -6,6 +6,7 @@ class DatabaseConn{
     private $password = '';
     private $database = 'ma_apparel';
     protected $conn;
+    
     public function __construct()
     {
     }

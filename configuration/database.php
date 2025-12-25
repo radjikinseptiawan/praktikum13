@@ -24,9 +24,21 @@ class DatabaseConn{
     public function getallData($table){
         $net = $this->connect();
         $safeTable = $net->real_escape_string($table);
-        $query = "SELECT * FROM {$safeTable} LIMIT 10";
+        $query = "SELECT * FROM {$safeTable} LIMIT 5";
         $results = $net->query($query);
 
+        return $results;
+    }
+
+    public function getLimitData($offset,$limit){
+        $conn = $this->connect();
+        $sql = "SELECT * FROM data_barang LIMIT ?,?";
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bind_param('ii',$offset,$limit);
+        $stmt->execute();
+
+        $results = $stmt->get_result();
         return $results;
     }
 
@@ -41,10 +53,9 @@ class DatabaseConn{
         $query->execute();
 
         $results = $query->get_result();
-        
         return $results;
     }
 }
 
 $data = new DatabaseConn();
-$data->getDataSelection("data_barang","id_barang","1");
+$data->getDataSelection("data_barang","id_barang","kaos");

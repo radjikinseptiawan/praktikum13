@@ -10,7 +10,7 @@
 </thead>
     <tbody>
         <?php
-            $data = $cluster->getallData("data_barang");
+            $data = $cluster->getLimitData($offset,$per_page);
             while($item = $data->fetch_assoc()){
                 echo "
                 <tr>   
